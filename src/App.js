@@ -6,10 +6,6 @@ function App() {
   const [data, setData] = useState([]);
   const [listIds, setListIds] = useState([]);
 
-  useEffect(() => {
-    getApiData();
-  }, []);
-
   const getApiData = () => {
     fetch('/hiring.json')
       .then(res => res.json())
@@ -34,6 +30,10 @@ function App() {
       return a - b;
     });
   };
+
+  useEffect(() => {
+    getApiData();
+  }, []);
 
   return (
     <div className="App">
